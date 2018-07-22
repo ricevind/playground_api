@@ -3,7 +3,7 @@ const PORT = process.env.PORT || 5000;
 
 const app = express();
 
-app.get('/hidden-message', (req, res) => res.send(`<html><body>Karoś, Kocham Cię!!<div>
+app.get('/hidden-message', (req, res) => res.send(`<html><body>***<div>
 <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="645" height="585" id="svg2">
   <defs id="defs4"/>
   <g id="layer1">
