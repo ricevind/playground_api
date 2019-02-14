@@ -47,16 +47,17 @@ canvas { display:block; }
 <script>
 const endAngle = 226;
 let canvas = document.getElementById('myCanvas');
+ canvas.width = window.innerWidth;
+     canvas.height = window.innerHeight;
 let context = canvas.getContext('2d');
 let counter = 60;
 let radius, tx, ty;
 context.translate(tx, ty);
 randomize();
-requestAnimationFrame(animate);
+setTimeout(animate, 3);
  
 function animate() {
-     canvas.width = window.innerWidth;
-     canvas.height = window.innerHeight;
+    
   let x, y;
   if (counter <= endAngle) {
     let radians = Math.PI / 180 * counter;
@@ -72,12 +73,12 @@ function animate() {
   }
   counter = counter + 1;
   if (counter >= endAngle + radius * 1.2) randomize();
-  requestAnimationFrame(animate);
+  setTimeout(animate, 3);
 }
  
 function randomize() {
   counter = 60;
-  context.fillStyle = 'rgba(255,' + Math.floor(Math.random() * 255) + ', 255 ,1)';
+  context.fillStyle = 'rgba(255,' + Math.floor(Math.random() * 255) + ', '+ Math.floor(Math.random() * 255) + ',1)';
   radius = Math.random() * 100;
   context.translate(-tx, -ty);
   tx = Math.random() * canvas.width;
@@ -91,4 +92,4 @@ function randomize() {
 
 app.get("/", (req, res) => res.send("Hello world"));
 
-app.listen(PORT, () => console.log("Example app listening on port 3000!"));
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
