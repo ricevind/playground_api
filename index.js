@@ -34,7 +34,16 @@ app.get("/hidden-message", (req, res) =>
 
 app.get("/14", (req, res) =>
   res.send(`<html>
-<canvas id='myCanvas' width='800' height='600'></canvas>
+<head>
+<style>
+* { margin:0; padding:0; } 
+
+html, body { width:100%; height:100%; } 
+
+canvas { display:block; } 
+</style>
+</head>
+<canvas id='myCanvas'></canvas>
 <script>
 const endAngle = 226;
 let canvas = document.getElementById('myCanvas');
@@ -46,6 +55,8 @@ randomize();
 requestAnimationFrame(animate);
  
 function animate() {
+     canvas.width = window.innerWidth;
+     canvas.height = window.innerHeight;
   let x, y;
   if (counter <= endAngle) {
     let radians = Math.PI / 180 * counter;
