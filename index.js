@@ -6,7 +6,7 @@ const app = express();
 app.get("/hidden-message", (req, res) =>
   res.send(`<html>
   <body>
-    ***
+    Karoś Kocham Cię !
     <div>
       <svg
         xmlns:svg="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ app.get("/hidden-message", (req, res) =>
 `)
 );
 
-app.get("/hidden-message", (req, res) =>
+app.get("/14", (req, res) =>
   res.send(`<html>
 <canvas id='myCanvas' width='800' height='600'></canvas>
 <script>
