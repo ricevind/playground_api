@@ -6,7 +6,7 @@ const app = express();
 app.get("/hidden-message", (req, res) =>
   res.send(`<html>
   <body>
-    Karoś Kocham Cię !
+    Karoś Kocham Cię ! I to wciąż bardzo aktualne U+1F63B U+1F63B U+1F63B
     <div>
       <svg
         xmlns:svg="http://www.w3.org/2000/svg"
